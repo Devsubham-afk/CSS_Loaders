@@ -1,0 +1,200 @@
+body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+}
+.loader{
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+}
+#loader1{
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    animation-name: spin;
+    animation-duration: 10s;
+    transition-timing-function: linear;
+    animation-iteration-count: 2;
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+#loader2{
+    border: 8px dotted #f3f3f3;
+    border-top: 8px dotted red;
+    border-radius: 50%;
+    margin-left: 50px;
+    animation-name: spin;
+    animation-duration: 10s;
+    transition-timing-function: linear;
+    animation-iteration-count: 2; 
+}
+#loader3{
+    background-color: #3498db;
+    border-radius: 50%;
+    animation-name: pulse;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+
+}
+@keyframes pulse{
+    0%{
+        transform: scale(0.8);
+    }
+    50%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0.8);
+    }
+}
+#loader3{
+    width: 15px;
+    height: 15px;
+    background-color: #3498db;
+    border-radius: 50%;
+    margin-left: 50px;
+    animation-name: bounce;
+    animation-duration: 1.5s;
+    animation-iteration-count: 3;
+    animation-timing-function: ease;
+}
+@keyframes bounce{
+    0%,100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+}
+
+#loader4{
+    display: flex;
+    justify-content: space-around;
+}
+#loader4::before, #loader4::after{
+    content: "";    
+    width: 8px;
+    height: 20px;
+    background-color: #3498db;
+    animation: stretch 2s ease infinite;
+}
+#loader4::after{
+    animation-delay: -0.6s;
+    /* animation-direction: reverse; */
+    animation-iteration-count: infinite;
+}
+@keyframes stretch{
+    0%, 40%, 100%{
+        transform: scaleY(2.4);
+    }
+    20%{
+        transform: scaleY(1);
+    }
+}
+#loader5{
+    display: flex;
+    justify-content: space-around;
+}
+#loader5::before, #loader5::after{
+    content: "";    
+    width: 8px;
+    height: 8px;
+    background-color: #3498db;
+    border-radius: 50%;
+    animation: dots 1.2s ease-in-out infinite;
+}
+#loader5::after{
+    animation-delay: 1s;
+}
+@keyframes dots{
+    0%, 80%, 100%{
+        transform: scale(0);
+    }
+    40%{
+        transform: scale(1);
+    }
+}
+#loader6{
+    border: 8px solid transparent;
+    border-radius: 50%;
+    border-top: 8px solid #3498db;
+    border-bottom: 8px solid #3498db;
+    animation: circle-fade 5s ease-in-out infinite;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+}
+@keyframes circle-fade{
+    0%, 100%{
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+    50%{
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+}
+#loader7{
+    height: 60px;
+    width: 60px;
+    border: 8px solid #3498db;
+    border-radius: 50%;
+    border-top: 8px solid transparent;
+    animation: dual-ring 1.5s linear infinite
+}
+@keyframes dual-ring{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+#loader8{
+    background-color: red;
+    animation: square 1.5s infinite ease-in-out;
+}
+@keyframes square{
+    0%, 100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(0.5);
+    }
+}
+#loader9{
+    display: flex;
+    justify-content: space-around;
+}
+#loader9::before, #loader9::after, #loader9 div{
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #3498db;
+    border-radius: 50%;
+    animation: roller 1.2s ease-in-out infinite;
+}
+#loader9 div{
+    animation-delay: -0.10s;
+}
+#loader9::before{
+    animation-delay: -0.12s;
+}
+@keyframes roller{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
